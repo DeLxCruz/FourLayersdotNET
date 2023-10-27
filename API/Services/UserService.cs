@@ -125,7 +125,7 @@ namespace API.Services
 
             if (result == PasswordVerificationResult.Success)
             {
-                var rolExists = await _unitOfWork.Roles.Find(r => r.Nombre.ToLower() == model.Role.ToLower()).FirstOrDefault();
+                var rolExists = _unitOfWork.Roles.Find(r => r.Nombre.ToLower() == model.Role.ToLower()).FirstOrDefault();
 
                 if (rolExists != null)
                 {
